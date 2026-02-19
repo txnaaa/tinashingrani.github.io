@@ -1,0 +1,303 @@
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: #F7F7F7;
+  color: #12213F;
+  line-height: 1.6;
+}
+
+/* ===================================
+   NAVIGATION ELEMENTS
+   =================================== */
+
+/* Back button */
+.back-btn {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  text-decoration: none;
+  font-size: 16px;
+  color: #385898;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  opacity: 0.6;
+}
+
+/* Burger menu container */
+.burger-menu {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  z-index: 100;
+}
+
+/* Burger icon */
+.burger-icon {
+  width: 28px;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  display: block;
+  height: 3px;
+  background: #385898;
+  margin: 6px 0;
+  transition: 0.3s ease;
+}
+
+/* Burger nav (hidden by default) */
+.burger-nav {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  display: none;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.burger-nav a {
+  text-decoration: none;
+  color: #385898;
+  font-size: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.burger-nav a:hover {
+  opacity: 0.6;
+}
+
+/* Active burger menu state */
+.burger-menu.active .burger-nav {
+  display: flex;
+}
+
+/* ===================================
+   PAGE LAYOUT
+   =================================== */
+.outcomes-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 40px;
+}
+
+/* ===================================
+   PROJECT SELECTOR
+   =================================== */
+.project-selector {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.project-btn {
+  background: transparent;
+  border: 2px solid #385898;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-size: 16px;
+  color: #385898;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  box-shadow: 0 0 20px rgba(56, 88, 152, 0.35);
+}
+
+.project-btn.active {
+  background: #385898;
+  color: #F7F7F7;
+  box-shadow: 0 0 25px rgba(56, 88, 152, 0.5);
+}
+
+/* ===================================
+   PROJECT CONTENT
+   =================================== */
+.project-content {
+  display: none;
+}
+
+.project-content.active {
+  display: block;
+}
+
+.project-content h1 {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #12213F;
+}
+
+/* ===================================
+   LEARNING OUTCOME NAVIGATION
+   =================================== */
+.lo-navigation {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.lo-btn {
+  background: transparent;
+  border: 2px solid #6C88C0;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #6C88C0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.lo-btn:hover {
+  background: rgba(108, 136, 192, 0.1);
+  transform: translateY(-2px);
+}
+
+.lo-btn.active {
+  background: #6C88C0;
+  color: #F7F7F7;
+  box-shadow: 0 4px 12px rgba(108, 136, 192, 0.3);
+}
+
+/* ===================================
+   LEARNING OUTCOME SECTIONS
+   =================================== */
+.learning-outcome-section {
+  display: none;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.learning-outcome-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.learning-outcome-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #385898;
+  border-bottom: 3px solid #385898;
+  padding-bottom: 10px;
+}
+
+/* ===================================
+   PROOF BLOCKS
+   =================================== */
+.proof {
+  margin-bottom: 40px;
+  max-width: 750px;
+  padding: 20px;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.proof h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #12213F;
+}
+
+.proof h4 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #385898;
+  font-weight: 600;
+}
+
+.proof p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.proof a {
+  font-size: 14px;
+  color: #6C88C0;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  transition: color 0.2s ease;
+}
+
+.proof a:hover {
+  color: #385898;
+  text-decoration: underline;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 768px) {
+  .outcomes-page {
+    padding: 50px 20px;
+  }
+
+  .project-content h1 {
+    font-size: 32px;
+  }
+
+  .learning-outcome-section h2 {
+    font-size: 26px;
+  }
+
+  .project-selector,
+  .lo-navigation {
+    gap: 10px;
+  }
+
+  .project-btn,
+  .lo-btn {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
+
+  .proof {
+    padding: 15px;
+  }
+
+  .proof h3 {
+    font-size: 20px;
+  }
+
+  .proof h4 {
+    font-size: 16px;
+  }
+
+  .back-btn,
+  .burger-menu {
+    top: 20px;
+    left: 20px;
+  }
+
+  .burger-menu {
+    right: 20px;
+    left: auto;
+  }
+}
